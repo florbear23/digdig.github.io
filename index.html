@@ -14,7 +14,6 @@ document.createElement( "picture" );
 </script>
 <script src="js/picturefill.min.js"></script>
 </head>
-
 <body>
 	<nav>
 		<div class="topnav" id="myTopnav">
@@ -32,7 +31,7 @@ document.createElement( "picture" );
 
 	<main>
 		<div class="mainArea">
-			<div class="carousel  ">
+			<div class="carousel">
 				<div class="carouselInner slideshow-container ">
 					<div class="carouselItem mySlides fade">
 						<section class="itemSection">
@@ -56,8 +55,8 @@ document.createElement( "picture" );
 							<div class="itemPhoto">
 								<a href="#">
 									<picture>
-										<source media="(max-width: 767px)" srcset="images/photo1_sp.jpg">
-										<source media="(min-width: 768px)" srcset="images/photo1_pc.jpg">
+										<source media="(max-width: 767px)" srcset="images/photo2_sp.jpg">
+										<source media="(min-width: 768px)" srcset="images/photo2_pc.jpg">
 										<img src="images/photo2_pc.jpg" alt="">
 									</picture>
 								</a>
@@ -73,8 +72,8 @@ document.createElement( "picture" );
 							<div class="itemPhoto">
 								<a href="#">
 									<picture>
-										<source media="(max-width: 767px)" srcset="images/photo1_sp.jpg">
-										<source media="(min-width: 768px)" srcset="images/photo1_pc.jpg">
+										<source media="(max-width: 767px)" srcset="images/photo3_sp.jpg">
+										<source media="(min-width: 768px)" srcset="images/photo3_pc.jpg">
 										<img src="images/photo3_pc.jpg" alt="">
 									</picture>
 								</a>
@@ -164,18 +163,17 @@ document.createElement( "picture" );
 
 <div>
 	<footer>
-		<div> <img src="images/logo.gif" alt=""></div>	
+		<div><img src="images/logo.gif" alt=""></div>	
 	</footer>
 </div>
 </body>
 <script src="js/jquery-1.11.3.min.js"></script>
 <script>
-	const toggleButton = document.getElementsByClassName('toggle-button')[0]
-	const navbarLinks = document.getElementsByClassName('navbar-links')[0]
-	toggleButton.addEventListener('click', () => {
-		navbarLinks.classList.toggle('active')
-	})
-
+	// const toggleButton = document.getElementsByClassName('toggle-button')[0]
+	// const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+	// toggleButton.addEventListener('click', () => {
+	// 	navbarLinks.classList.toggle('active')
+	// })
 	function myFunction() {
 		var x = document.getElementById("myTopnav");
 		if (x.className === "topnav") {
@@ -185,35 +183,42 @@ document.createElement( "picture" );
 		}
 	}
 
+	// Slider
+	var slideIndex = 1;
+	showSlides(slideIndex);
 
-
-			var slideIndex = 1;
-		showSlides(slideIndex);
-
-		// Next/previous controls
-		function plusSlides(n) {
+	// Next/previous controls
+	function plusSlides(n) {
 		showSlides(slideIndex += n);
-		}
+	}
 
-		// Thumbnail image controls
-		function currentSlide(n) {
+	// Thumbnail image controls
+	function currentSlide(n) {
 		showSlides(slideIndex = n);
-		}
+	}
 
-		function showSlides(n) {
+	function showSlides(n) 
+	{
 		var i;
 		var slides = document.getElementsByClassName("mySlides");
 		var dots = document.getElementsByClassName("dot");
-		if (n > slides.length) {slideIndex = 1}
-		if (n < 1) {slideIndex = slides.length}
+		if (n > slides.length) {
+			slideIndex = 1;
+		}
+		if (n < 1) {
+			slideIndex = slides.length
+		}
 		for (i = 0; i < slides.length; i++) {
 			slides[i].style.display = "none";
 		}
 		for (i = 0; i < dots.length; i++) {
-			dots[i].className = dots[i].className.replace(" active", "");
+			dots[i].classList.remove("active");
+			dots[i].classList.remove("current");
 		}
+
 		slides[slideIndex-1].style.display = "block";
 		dots[slideIndex-1].className += " active";
-		}
+		dots[slideIndex-1].className += " current";
+	}
 </script>
 </html>

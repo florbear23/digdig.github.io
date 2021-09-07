@@ -49,6 +49,7 @@ body{
 	font-size:75%;
 	text-align:left;
 	line-height:1.33;
+	overflow-x: hidden;
 }
 
 @media only screen and (max-width: 767px)
@@ -240,12 +241,13 @@ nav div .logo {
   }
   
   @media screen and (max-width: 600px) {
-	.topnav.responsive {position: relative;}
+	.topnav.responsive {
+		position: relative;
+	}
 	.topnav.responsive .icon {
 	  position: absolute;
 	  right: 0;
 	  top: 0;
-	  
 	}
 
 	
