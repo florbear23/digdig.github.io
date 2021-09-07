@@ -198,6 +198,9 @@ nav div .logo {
 	.nav-link-arrow-right {
 		display: none;
 	}
+	div .top-up{
+		position: fixed; bottom: 0px; right: 193px;
+	}
 }
 
 
@@ -320,20 +323,6 @@ nav div .logo {
 	padding: 0 1px;
 }
 
-
-div .top-up{
-
-	position: fixed; bottom: 0px; right: 193px;
-
-	/* position: absolute;
-	right: 190px;
-	bottom: -600px;
-	 */
-
-}
-
-
-
 footer{
 	background-color: black;
 	max-height: 70px;
@@ -412,12 +401,11 @@ footer img{
 }
 
 @media screen and (max-width: 767px){
-
 	div .top-up{
-		display: inline;
-		position: absolute; bottom: 0px; left:0;
-	
-		
+		background: #EBEBEB;
+		position: relative;
+		display: flex;
+		align-items: center;
+    	justify-content: center;
 	}
-
 }
