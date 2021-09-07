@@ -166,12 +166,16 @@ html:not(:target) body{
 	background: url(../images/carousel_current.gif) 0 0 no-repeat;
 }
 
+
+
 @media only screen and (max-width: 767px){
 
 	.carousel{
 		display: none;
 	}
 }
+
+
 
 nav {
 	background-color: rgb(8, 8, 8);
@@ -187,6 +191,7 @@ nav div .logo {
 	width: 187px;
 	float: left;
 	padding-left: 0;
+	
 }
 
 
@@ -215,11 +220,22 @@ nav div .logo {
 	display: none;
   }
 
+
+
+
+  @media screen and (max-width: 600px){
+
+	.topnav icon{
+		background-color: #ededed;
+	}
+  }
+
   @media screen and (max-width: 600px) {
 	.topnav a:not(:first-child) {display: none;}
 	.topnav a.icon {
 	  float: right;
 	  display: block;
+	  
 	}
   }
   
@@ -229,11 +245,17 @@ nav div .logo {
 	  position: absolute;
 	  right: 0;
 	  top: 0;
+	  
 	}
+
+	
+	
 	.topnav.responsive a {
 	  float: none;
 	  display: block;
 	  text-align: left;
+	 
+	
 	 
 	}
   }
@@ -242,6 +264,8 @@ nav div .logo {
 	max-width: 960px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 97px;
+	margin-top: 56px;
 }
 
 .card-box {
@@ -273,20 +297,34 @@ nav div .logo {
 }
 
 
-div .top-up {
+/* div .top-up {
 
-}
+} */
 
 footer{
 	background-color: black;
-	height: 70px;
+	max-height: 70px;
+	max-width: 960;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	align-content: space-around;
+
+}
+
+footer div{
+	max-width: 360px;
+	margin:  0 auto;
+	padding: 0 auto;
 }
 
 footer img{
 	height: 30px;
 	width: 184px;
-	margin: 20px 530px;
-	padding: 0px 50px;
+	margin: 20px auto ;
+	padding: 0px 0px;
+
+
 
 }
 
@@ -307,7 +345,7 @@ footer img{
 	align-items: center;
 	flex-wrap: wrap;
 	align-content: space-around;
-	padding:20px ;
+	padding:0 ;
 
 	}
 
@@ -315,7 +353,7 @@ footer img{
 	footer img{
 		height: 30px;
 		width: 184px;
-		margin: 20px 23%;
+		margin: 20px ;
 		padding: 0px;
 	}
 
@@ -329,6 +367,7 @@ footer img{
 		align-items: center;
 		flex-wrap: wrap;
 		align-content: space-around;
+		
 	}
 	
 		.card-area{
