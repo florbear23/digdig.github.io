@@ -20,14 +20,24 @@ document.createElement( "picture" );
 			<a href="#" class="logo">
 				<img src="images/logo.gif" alt="">
 			</a>	
-			<a href="#news">旅を探す</a>
-			<a href="#contact">旅の準備</a>
-			<a href="#about">旅の思い出</a>
-			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-				<i class="fa fa-bars"></i>
+			<a href="#news" class="nav-links">
+				旅を探す <img src="images/pagetop_pc.gif" alt="" class="nav-link-arrow-right">
+			</a>
+			<a href="#contact" class="nav-links">
+				旅の準備 <img src="images/pagetop_pc.gif" alt="" class="nav-link-arrow-right">
+			</a>
+			<a href="#about" class="nav-links">
+				旅の思い出 <img src="images/pagetop_pc.gif" alt="" class="nav-link-arrow-right">
+			</a>
+			<a href="javascript:void(0);" class="icon toggle-button" onclick="myFunction()">
+				<img src="images/menu_open.png" alt="" class="nav-open">
+				<img src="images/menu_close.png" alt="" class="nav-close d-none">
 			</a>
 		</div>
 	</nav>
+<!-- 	<nav>
+		
+	</nav> -->
 
 	<main>
 		<div class="mainArea">
@@ -174,16 +184,34 @@ document.createElement( "picture" );
 <script src="js/jquery-1.11.3.min.js"></script>
 <script>
 	// const toggleButton = document.getElementsByClassName('toggle-button')[0]
-	// const navbarLinks = document.getElementsByClassName('navbar-links')[0]
 	// toggleButton.addEventListener('click', () => {
-	// 	navbarLinks.classList.toggle('active')
+		// toggleButton.classList.toggle('nav-icon-active')
+		
 	// })
-	function myFunction() {
+
+	function myFunction() 
+	{
 		var x = document.getElementById("myTopnav");
-		if (x.className === "topnav") {
+		if (x.className === "topnav") 
+		{
 			x.className += " responsive";
-		} else {
+			$(".nav-links").addClass("mobile-nav-active");
+			$(".nav-links").css({"display": "flex"});
+
+			$(".nav-open").addClass("d-none");
+			$(".nav-close").removeClass("d-none");
+			$(".icon").css({"background-color": "#EDEDED"});
+
+		} 
+		else 
+		{
 			x.className = "topnav";
+			$(".nav-links").removeClass("mobile-nav-active");
+			$(".nav-links").css({"display": "none"});
+
+			$(".nav-open").removeClass("d-none");
+			$(".nav-close").addClass("d-none");
+			$(".icon").css({"background-color": "#0000"});
 		}
 	}
 
